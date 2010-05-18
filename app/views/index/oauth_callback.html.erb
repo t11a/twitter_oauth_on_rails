@@ -1,0 +1,15 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>OAuth Result of Twitter</title>
+</head>
+<body>
+<h1><%= @params['screen_name'] %>(<%= @params['user_id'] %>)さんのTL</h1>
+<% @statuses.each_with_index do |status, i|
+    user = status['user']
+%>
+<font color="red"><%= i+1 %>. <%= user['name'] + "(" + user['screen_name'] + ")" %></font><br>
+<%= status['text'] %><br>
+<% end %>
+</body>
+</html>
